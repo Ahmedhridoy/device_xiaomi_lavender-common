@@ -172,3 +172,18 @@ setprop persist.vendor.mmi.misc_dev_path $real_path
 	if echo "$available_governors" | grep schedutil; then
 	  setprop sys.use_fifo_ui 1
 	fi
+}
+
+function configure_read_ahead_kb_values() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    dmpts=$(ls /sys/block/*/queue/read_ahead_kb | grep -e dm -e mmc)
+
+    # Set 128 for all targets.
+    echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
+    echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+    for dm in $dmpts; do
+        echo 128 > $dm
+    done
+}
