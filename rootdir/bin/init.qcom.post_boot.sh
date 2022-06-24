@@ -183,7 +183,8 @@ function configure_read_ahead_kb_values() {
     # Set 128 for all targets.
     echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
     echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+    echo 40 > /proc/sys/vm/vfs_cache_pressure
     for dm in $dmpts; do
-        echo 128 > $dm
+    echo 128 > $dm
     done
 }
