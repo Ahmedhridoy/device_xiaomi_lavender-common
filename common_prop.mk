@@ -1,5 +1,5 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys"
+BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys"
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -32,8 +32,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
     ro.audio.soundfx.dirac=true \
-    ro.config.vc_call_vol_steps=7 \
-    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=60 \
+    ro.config.media_vol_steps=60 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.adm.buffering.ms=12 \
