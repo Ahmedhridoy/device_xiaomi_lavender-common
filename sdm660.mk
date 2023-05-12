@@ -189,9 +189,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk )
-
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
@@ -214,10 +211,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
-
-# Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -618,7 +611,7 @@ PRODUCT_BOOT_JARS += \
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
-   XiaomiParts
+    XiaomiParts
 
 # Force triple frame buffers
 PRODUCT_PROPERTY_OVERRIDES += \

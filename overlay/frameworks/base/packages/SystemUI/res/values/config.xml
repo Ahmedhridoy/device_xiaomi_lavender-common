@@ -39,7 +39,7 @@
     <!-- The CPU temperature sensor path, defaults to empty -->
     <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone0/temp</string>
    
-     <!-- FPSInfoService Fps file path -->
+    <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
 
     <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
