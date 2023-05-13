@@ -19,6 +19,9 @@
     <!-- Device specific doze package -->
     <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
 
+    <!-- Disable Battery Health by default -->
+    <bool name="config_supportBatteryHealth">true</bool>
+
     <!-- Battery Health -->
     <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full</string>
     <string name="config_batCurCap">/sys/class/power_supply/bms/charge_now_raw</string>
