@@ -333,3 +333,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # VSync for CPU rendered app    
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.cpurend.vsync=false
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.hwui.render_ahead=20
