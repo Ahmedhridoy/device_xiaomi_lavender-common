@@ -538,6 +538,9 @@ on property:persist.vendor.ssr.enable_ramdumps=0
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
+    
+    # Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
 
     #Reset read ahead for dm-0, dm-1, dm-3, dm-4, dm-5 and dm-6 to 128b
     write /sys/block/dm-0/queue/read_ahead_kb 128
