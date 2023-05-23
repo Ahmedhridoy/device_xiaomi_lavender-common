@@ -161,6 +161,9 @@ PRODUCT_PACKAGES += \
 # Boot animation
 TARGET_BOOTANIMATION_SIZE := 1080p
 
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Broadcastradio
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
@@ -460,9 +463,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
-
-# Preopt SystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Privapp-Permissions
 PRODUCT_COPY_FILES += \
