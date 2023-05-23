@@ -10,6 +10,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=8 \
     ro.vendor.qti.am.reschedule_service=true
 
+# App launch prefetching (IORapd)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.iorapd.enable=false \
+    iorapd.perfetto.enable=false \
+    iorapd.readahead.enable=false \
+    persist.device_config.runtime_native_boot.iorap_readahead_enable=false
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
