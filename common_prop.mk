@@ -150,6 +150,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.disable_client_composition_cache=1 \
     debug.hwui.skia_atrace_enabled=false \
     ro.config.avoid_gfx_accel=true \
     debug.sf.latch_unsignaled=1 \
