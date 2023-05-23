@@ -150,6 +150,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.skia_atrace_enabled=false
     debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
