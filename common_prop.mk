@@ -3,12 +3,18 @@ BUILD_FINGERPRINT := "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true \
     dalvik.vm.boot-dex2oat-threads=8 \
-    dalvik.vm.dex2oat-filter=speed \
+    pm.dexopt.first-boot=quicken \
+    dalvik.vm.dex2oat-filter=quicken \
     dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.image-dex2oat-filter=speed \
+    dalvik.vm.image-dex2oat-filter=quicken \
     ro.sys.fw.dex2oat_thread_count=8 \
-    ro.vendor.qti.am.reschedule_service=true
+    ro.vendor.qti.am.reschedule_service=true \
+    dalvik.vm.dex2oat-minidebuginfo=false \
+    dalvik.vm.minidebuginfo=false \
+    pm.dexopt.bg-dexopt=everything
+
 
 # App launch prefetching (IORapd)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -49,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.flac.sw.decoder.24bit=true \
     vendor.audio_hal.period_size=240 \
     vendor.audio.hw.aac.encoder=true \
-    vendor.audio.offload.buffer.size.kb=64 \
+    vendor.audio.offload.buffer.size.kb=256 \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.offload.multiaac.enable=true \
     vendor.audio.offload.multiple.enabled=false \
