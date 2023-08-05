@@ -155,6 +155,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.avoid_gfx_accel=true \
     debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
+    debug.sf.treat_170m_as_sRGB=1 \
     debug.sf.hw=1 \
     debug.sf.disable_backpressure= 1 \
     debug.sf.early_app_phase_offset_ns=1500000 \
