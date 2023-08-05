@@ -23,6 +23,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     iorapd.readahead.enable=false \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
+# Blur
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.sf.disable_blurs=1 \
+    ro.sf.blurs_are_expensive=0 \
+    ro.launcher.blur.appLaunch=0 \
+    ro.surface_flinger.supports_background_blur=0
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
@@ -168,8 +175,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.enable_gl_backpressure=1 \
     debug.cpurend.vsync=false \
+    debug.sf.enable_gl_backpressure=0 \
+    debug.sf.disable_client_composition_cache=1 \
     debug.sdm.support_writeback=0 \
     debug.hwui.use_buffer_age=false \
     persist.debug.wfd.enable=1 \
@@ -179,6 +187,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.video.disable.ubwc=1 \
+    vendor.display.disable_rotator_downscale=1 \
     vendor.display.enable_default_color_mode=0 \
     video.disable.ubwc=1
 
@@ -276,7 +285,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=2 \
     persist.radio.data_con_rprt=1 \
     persist.vendor.data.mode=concurrent \
-    persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.qti.telephony.vt_cam_interface=2 \
+    persist.vendor.radio.vdp_on_ims_cap=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.custom_ecc=1 \
@@ -303,6 +313,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.gpu_comp_tiling=1 \
     debug.sf.recomputecrop=0 \
     persist.hwc.ptor.enable=true
+ 
+# logs
+PRODUCT_PROPERTY_OVERRIDES += \
+    debugtool.anrhistory=0 \
+    debug.mdpcomp.logs=0 \
+    profiler.force_disable_ulog=true \
+    profiler.force_disable_ulog=1 \
+    profiler.force_disable_err_rpt=1 \
+    profiler.force_disable_err_rpt=true \
+    profiler.hung.dumpdobugreport=false \
+    profiler.debugmonitor=false \
+    profiler.launch=false \
+    logcat.live=disable \
+    persist.ims.disableADBLogs=1 \
+    persist.ims.disableDebugLogs=1 \
+    persist.ims.disableIMSLogs=1 \
+    persist.ims.disableQXDMLogs=1 \
+    persist.camera.debug.logfile=0
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
