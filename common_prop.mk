@@ -330,6 +330,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ssr.restart_level=ALL_ENABLE
 
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.perf.scroll_opt=true
+
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.thermal.data.path=/data/vendor/thermal/
@@ -351,6 +355,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.cpurend.vsync=false
 
-# Audio
+# render
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.hwui.render_ahead=20
+ro.hwui.render_ahead=3
