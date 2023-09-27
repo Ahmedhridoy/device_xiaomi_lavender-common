@@ -10,17 +10,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat64.enabled=true \
-    dalvik.vm.boot-dex2oat-threads=8 \
+    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.bg-dexopt=everything \
     pm.dexopt.first-boot=quicken \
+    pm.dexopt.install=speed-profile \
     dalvik.vm.dex2oat-filter=quicken \
-    dalvik.vm.dex2oat-threads=8 \
     dalvik.vm.image-dex2oat-filter=quicken \
-    ro.sys.fw.dex2oat_thread_count=8 \
-    ro.vendor.qti.am.reschedule_service=true \
-    dalvik.vm.dex2oat-minidebuginfo=false \
-    dalvik.vm.minidebuginfo=false \
-    pm.dexopt.bg-dexopt=everything
+    dalvik.vm.systemuicompilerfilter=speed \
+    persist.sys.dalvik.multithread=true \
+    dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    dalvik.vm.image-dex2oat-threads=8
 
 # App launch prefetching (IORapd)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -28,13 +32,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     iorapd.perfetto.enable=false \
     iorapd.readahead.enable=false \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=false
-
-# Blur
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.sf.disable_blurs=1 \
-    ro.sf.blurs_are_expensive=0 \
-    ro.launcher.blur.appLaunch=0 \
-    ro.surface_flinger.supports_background_blur=0
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -58,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
     ro.audio.soundfx.dirac=true \
-    ro.config.vc_call_vol_steps=60 \
+    ro.config.vc_call_vol_steps=25 \
     ro.config.media_vol_steps=60 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
@@ -336,7 +333,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableDebugLogs=1 \
     persist.ims.disableIMSLogs=1 \
     persist.ims.disableQXDMLogs=1 \
-    persist.camera.debug.logfile=0
+    persist.camera.debug.logfile=0 \
+    persist.log.tag.AnalyticsService=S \
+    persist.log.tag.KernelCpuUidActiveTimeReader=S \
+    persist.log.tag.Tracer=S \
+    persist.log.tag.NearbySharing=S \
+    persist.log.tag.IntervalStats=S \
+    persist.log.tag.CompatibilityChangeReporter=S \
+    persist.log.tag.SQLiteLog=S \
+    persist.log.tag.wificond=S \
+    persist.log.tag.b/223498680=S \
+    persist.log.tag.TrafficStats=S \
+    persist.log.tag.ContrastColorUtil=S \
+    persist.log.tag.OpenGLRenderer=S
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -388,7 +397,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # VSync for CPU rendered app    
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.cpurend.vsync=false
-
-# render
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.hwui.render_ahead=3
