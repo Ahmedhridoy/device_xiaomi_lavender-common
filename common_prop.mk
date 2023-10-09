@@ -10,21 +10,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.ab-ota=speed-profile \
-    pm.dexopt.bg-dexopt=everything \
-    pm.dexopt.first-boot=quicken \
-    pm.dexopt.install=speed-profile \
-    dalvik.vm.dex2oat-filter=quicken \
-    dalvik.vm.image-dex2oat-filter=quicken \
-    dalvik.vm.systemuicompilerfilter=speed \
-    persist.sys.dalvik.multithread=true \
     dalvik.vm.dex2oat64.enabled=true \
-    dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.boot-dex2oat-threads=8 \
-    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
+    pm.dexopt.first-boot=quicken \
+    dalvik.vm.dex2oat-filter=quicken \
     dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.image-dex2oat-threads=8
+    dalvik.vm.image-dex2oat-filter=quicken \
+    ro.sys.fw.dex2oat_thread_count=8 \
+    ro.vendor.qti.am.reschedule_service=true \
+    dalvik.vm.dex2oat-minidebuginfo=false \
+    dalvik.vm.minidebuginfo=false \
+    pm.dexopt.bg-dexopt=everything
 
 # App launch prefetching (IORapd)
 PRODUCT_PROPERTY_OVERRIDES += \
