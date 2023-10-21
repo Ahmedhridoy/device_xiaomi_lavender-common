@@ -1,0 +1,2 @@
+# Theme prop for persist.sys.theme.accentcolor
+allow xiaomiparts_app theme_prop:file { read } ;
