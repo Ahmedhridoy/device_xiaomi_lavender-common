@@ -338,6 +338,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Zygote preforking
 PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10 \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
 # VSync for CPU rendered app    
