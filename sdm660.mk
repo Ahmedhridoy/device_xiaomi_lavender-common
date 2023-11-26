@@ -39,6 +39,9 @@ $(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
 
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+
 # Inherit properties
 $(call inherit-product, $(COMMON_PATH)/common_prop.mk)
 
@@ -618,7 +621,3 @@ PRODUCT_BOOT_JARS += \
 # XiaomiParts
 PRODUCT_PACKAGES += \
     XiaomiParts
-
-# Force triple frame buffers
-PRODUCT_PROPERTY_OVERRIDES += \
-	 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
